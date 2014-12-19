@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Measuring Privacy with Distinguishability Metrics: Definitions, Mechanisms and Application to Location Privacy</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Measuring Privacy with Distinguishability Metrics:<br />Definitions, Mechanisms and Application to Location Privacy<br /><br />PhD Thesis</h1>
+	<p class="author">
+	  <a href="http://www.lix.polytechnique.fr/~nbordenabe">Nicolás Emilio BORDENABE</a>
+	</p>
+	<center> 
+		Supervised by <a href="http://www.lix.polytechnique.fr/~catuscia">Catuscia Palamidessi</a> 
+		and <a href="http://www.lix.polytechnique.fr/~kostas">Konstantinos Chatzikokolakis</a>. 
+		<br /><br />
+		<a href="http://www.lix.polytechnique.fr/">Laboratoire d'Informatique (LIX)</a> at <a href="http://www.polytechnique.fr/">Ecole Polytechnique</a>.
+		<br /><br />
+		<a href="http://www.inria.fr/" target="_blank"><img src="./imgs/inria.jpg" alt="INRIA" width="150"></a> &nbsp;&nbsp;&nbsp;
+		<a href="http://www.defense.gouv.fr/dga" target="_blank"><img src="./imgs/dga.jpg" alt="DGA" width="100"></a>&nbsp;&nbsp;&nbsp;
+		<a href="http://www.polytechnique.edu/" target="_blank"><img src="./imgs/polytechnique.jpg" alt="Polytechnique" width="70"></a>&nbsp;&nbsp;&nbsp;
+		<a href="http://www.lix.polytechnique.fr/" target="_blank"><img src="./imgs/lix.jpg" alt="LIX" width="100"></a>
+	</center>
+	
+	<hr>
+	<br />
+	<ul>
+	<li><a href="#abs">Abstract</a></li>
+	<li><a href="#pub">Publications from this Dissertation</a>
+		<ul>
+		<li><a href="#confs">Proceedings of conferences</a></li>
+		<li><a href="#reports">Technical Reports</a></li>
+	  	</ul>
+	</li>
+	<!--
+	<li><a href="#toc">Dissertation</a></li>
+	<li><a href="#mj">Members of the Jury</a></li>
+	-->
+	
+	<li><a href="#loginfo">Logistic Information</a></li>
+	
+	</ul>
+	<br />
+	<hr>
+
+	<h2><a name="abs"></a>Abstract</h2>
+	
+	<div class="abstract">
+	<p>
+	The increasing availability of personal computer systems, like smartphone and tablets, has given place to the development of 
+	a broad new class of applications. These applications collect and analyze big amounts of information about its users for different 
+	reasons, for instance: providing a personalized service, offering targeted advertisement, or providing accurate aggregated data for 
+	research and analysis purposes. However, serious privacy concerns have been risen about the kind and quantity of data being collected: 
+	this data is in general private by nature, and often it can be linked to other kinds of sensitive information. And in most cases, this 
+	information is made available to an untrusted entity, either because the service provider itself is not reliable, or because some 
+	aggregated information is being publicly released. In order to deal with these concerns, some kind of privacy guarantee is needed.  
+	</p>
+
+	<p>
+	Differential Privacy is one of the most prominent frameworks used to deal with disclosure prevention in statistical databases. It provides 
+	a formal privacy guarantee, ensuring that sensitive information relative to individuals cannot be easily inferred by disclosing answers to 
+	aggregate queries. If two databases are adjacent, i.e. differ only for an individual, then the query should not allow to tell them apart 
+	by more than a certain factor. This induces a bound also on the distinguishability of two generic databases, which is determined by their 
+	distance on the Hamming graph of the adjacency relation. 
+	</p>
+
+	<p>
+	When the sensitive information to be protected is other than the value of a single individual, or when the secrets itself are not databases 
+	at all, it is common to consider different notions of distinguishability. This distinguishability between secrets should depend on the 
+	application at hand and the privacy guarantees we wish to express. For instance, when dealing with geographic locations, it might be 
+	acceptable to disclose the fact that the user is in Paris rather than London. However, disclosing the precise location of the individual 
+	within Paris is likely to be undesired. Thus it would be useful to have a distinguishability level that depends on the geographical distance.
+	</p>
+
+	<p>
+	In the first part of this thesis we explore the implications of differential privacy when the indistinguishability requirement depends on 
+	an arbitrary notion of distance. We show that we can naturally express, in this way, (protection against) privacy threats that cannot be 
+	represented with the standard notion, leading to new applications of the differential privacy framework. We give intuitive characterizations 
+	of these threats in terms of Bayesian adversaries, which generalize two interpretations of (standard) differential privacy from the literature. 
+	We revisit the well-known results stating that universally optimal mechanisms exist only for counting queries: We show that, in our extended 
+	setting, universally optimal mechanisms exist for other queries too, notably sum, average, and percentile queries.
+	</p>
+	
+	<p>
+	In the second part of this thesis we introduce <i>geo-indistinguishability</i>, a formal notion of privacy for location-based systems that protects 
+	the user's exact location, while allowing approximate information to be released. This privacy definition corresponds to an instance of the 
+	generalized version of differential privacy presented before. We also show a mechanism for achieving Geo-indistinguishability and study different 
+	issues that arise with its implementation, namely the truncation of the result and the effect of the precision of the machine. We also describe 
+	how to use our mechanism to enhance LBS applications with geo-indistinguishability guarantees without compromising the quality of the application 
+	results.
+	</p>
+	
+	<p>
+	Finally, in the last part of this thesis, we consider the location privacy framework of Shokri et al, which offers an optimal trade-off between 
+	the loss of quality of service and the privacy protection with respect to a given Bayesian adversary. We show that it is possible to combine the 
+	advantages of this approach with ours: given a minimum threshold for the degree of geo-indistinguishability, we construct a mechanism that offers 
+	the maximal utility, as the solution of a linear optimization problem. Thanks to the fact that geo-indistinguishability is insensitive to the 
+	remapping of a Bayesian adversary, the mechanism so constructed is optimal also in the sense of Shokri et al. Furthermore we propose a method to 
+	reduce the number of constraints of the linear program from cubic to quadratic (with respect to the number of locations), maintaining the privacy 
+	guarantees without affecting significantly the utility of the generated mechanism. This lowers considerably the time required to solve the linear 
+	program, thus enlarging significantly the size of location sets for which the optimal trade-off mechanisms can still be computed.
+	</p>
+	
+	</div>
+	
+	<hr>
+	
+	<h2><a name="pub"></a>Publications from this Dissertation</h2>
+	
+	<h3><a name="confs"></a>Proceedings of conferences</h3>
+	
+	<ul>
+	<li>
+		<b>Optimal Geo-Indistinguishable Mechanisms for Location Privacy</b>.<br />
+		<b>N. E. Bordenabe</b>, K. Chatzikokolakis, C. Palamidessi.<br />
+		<i>21th ACM Conference on Computer and Communications Security (CCS 2014), to appear</i>.
+		[<a href="http://arxiv.org/abs/1402.5029">report</a>]
+	</li>
+	<li>
+		<b>Geo-Indistinguishability: Differential Privacy for Location Based Systems</b>.<br />
+		M. E. Andrés, <b>N. E. Bordenabe</b>, K. Chatzikokolakis, C. Palamidessi.<br />
+		<i>20th ACM Conference on Computer and Communications Security (CCS 2013), pp. 901-914, 2013</i>.
+		[<a href="http://arxiv.org/abs/1212.1984">report</a>]
+	</li>
+	<li>
+		<b>Broadening the scope of Differential Privacy using metrics</b>.<br />
+		K. Chatzikokolakis, M. E. Andrés, <b>N. E. Bordenabe</b>, C. Palamidessi.<br />
+		<i>13th Privacy Enhancing Technologies Symposium (PETS 2013), Springer, LNCS 7981, pp. 82-102, 2013</i>.
+		[<a href="http://hal.inria.fr/hal-00767210">report</a>]
+	</li>
+	</ul>
+	
+	
+	<hr>
+	
+	
+	<h2><a name="loginfo"></a>Logistic Information </h2>
+	<ul>
+	<li><b>Where: </b> <a href="https://www.inria.fr/en/centre/saclay/overview/practical-info/how-to-reach-the-centre" target="_blank">INRIA Saclay, Batiment Alan Turing, Campus de l'Ecole Polytechnique</a>. 
+		Room to be annouced.
+	</li>
+	<li><b>When: </b> To be annouced.</li>
+	</ul>
+	<a href="http://www.lix.polytechnique.fr/~catuscia/info.html" target="_blank">Click here</a> to know how to reach the Ecole Polytechnique and for information about accommodation.
+	
+	<br /><br /><br />
+	</body>	
+</html>

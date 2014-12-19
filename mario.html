@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+******************************************************************************************************************************
+*********************************************** FELIZ CUMPLE, MARIO! *********************************************************
+******************************************************************************************************************************
+-->
+
+<html>
+<head>
+    <script src="sha1.js" type="text/javascript"></script>
+    <script src="sjcl.js" type="text/javascript"></script>
+</head>
+<body>
+
+<body onload="myFunction()">
+
+<div id="demo"></div>
+
+<script>
+function myFunction()
+{
+var x;
+
+var v1 = "6a2cb5068ccb0e8a14459df76c0cf10785d68eb6";
+var v2 = "5b5f78803f4b75194d12018cbef8c1ae2f23e7fb";
+var v3 = "ef5c9a5ad1422f8cc9687b75cdfd301dbefc0066";
+var v4 = "7f314af8d3a09259202c453fc991ade13944f474";
+
+var url1 = '{"iv":"hUWJ7ezYrp7u+nAoN5+H6A==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"93XvDKgnlAs=","ct":"9j50jJA0aabZUxbs9gd4ZqUJM+AnoG8DMVHppWbEqtBF/2+5CTRcwW3o9jmbUBG8Ngw9uAnMCNXaP2l9pC5qp7agNAQT0uggHHqgivomL/b9PUJkVucWu2xRa1OpjkddS25OHacHEn4R/Z04Ve9pPHFfhHKweYfNtpqV10bMbiIZXlcGiDa9"}';
+var url2 = '{"iv":"9FF/wzMFcgvrO4duzU6/+A==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"E/UyBVGx+jw=","ct":"ulSgO08lzsz+mBRnbrMnGl8DbvGX08rWH6XtSrCLJpEdE7XhxndToH7VGj10VavB5FPxZSkA9P47cgg4B1xTMy8XLbr3rY+gXYUZpnjC6GVUtyBL9w+VE3IdOa1dnACPXVO6P6EkAS083cyV5orR4AxST/ffe8xQYUtzAbBBNxU8DAsaWrcm"}';
+var url3 = '{"iv":"0OCG7IH/f744bA/QKPHoZw==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"dHIWKYfM8N4=","ct":"fsf6BluILmTh8Jb+olvsu8vi5gr8PqTl63Mw1wIfl03U0k8K4yCS+leH5YmYrsvRHb7rXRQiA4QZX33MhQfJEQgXv/wXMfyEnE5ZOxBuGNj7s4KrzphwuIxkDT4xbbZhvOPjeGoHuhGhvxyTs72JZBdnTI6mb7j3mxz0g2LUwKo1I6g4RChT"}';
+var url4 = '{"iv":"iXXGFWZl68mBp8UTU2Fe0Q==","v":1,"iter":1000,"ks":128,"ts":64,"mode":"ccm","adata":"","cipher":"aes","salt":"j/fdQQSbiXY=","ct":"wqyBJM7eyZ8gSfLaj/DbisC2tVBiD6M5yzbjRJ565WN5T2IpTr5phs3ZCvyyKsb1A02fS+gjd47lM6E93kvYYpFhQX8VZJytZRQoMCAObyENPxiFIAg1NrEoDudQ1lQXoFBHZlfHT50g6g65eOGphfdvl2QYFMY0+J0tP0stzNcUzFj/M7g4"}';
+
+
+var answer = "";
+var hashans = "";
+var ok = false;
+
+while (!ok) 
+  {
+    answer=prompt("Minitas?","");
+    if(answer == null) break;
+    hashans = Sha1.hash(answer);
+    if(hashans == v1 || hashans == v2 || hashans == v3 || hashans == v4 ) ok = true;
+  }
+  
+if(ok) {
+    var vhtml = "";
+    if(hashans == v1) vhtml = sjcl.decrypt(answer, url1);
+    else if(hashans == v2) vhtml = sjcl.decrypt(answer, url2);
+    else if(hashans == v3) vhtml = sjcl.decrypt(answer, url3);
+    else if(hashans == v4) vhtml = sjcl.decrypt(answer, url4);
+    
+    document.getElementById("demo").innerHTML=vhtml;
+}
+
+
+}
+</script>
+
+</body>
+</html>
