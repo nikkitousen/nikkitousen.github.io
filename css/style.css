@@ -454,7 +454,7 @@ section#main {
     width: 1000px;
     background: none;
 }
-section#main h1 {
+section#main h1, section#publications h1 {
     margin-top: 10px;
     margin-bottom: 30px;
 }
@@ -574,252 +574,41 @@ section#latest-publications {
     color:#fff;
 }
 
+p.publication-item {
+	margin-bottom: 15px;
+}
+
+
+/* ----------------------------------------------------
+    Publications
+----------------------------------------------------- */
+
+section#publications div.conf, section#publications div.thesis {
+    margin-top: 50px;
+}
+
+
+
 /* -----------------------------------------
    Curriculum Vitae
 ------------------------------------------- */
 
 section#curriculum table#personal-info {
-	width: 100%;
-	margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 section#curriculum table#personal-info tr td{
-	/*height: 35px;*/
+    /*height: 35px;*/
 }
 
 section#curriculum span.cv-education-right {
-	float: right;
+    float: right;
 }
 
 section#curriculum h1 {
    margin: 0 0 25px 0;
 }
-
-/* -----------------------------------------
-   Services
-------------------------------------------- */
-section#services h1 {
-   margin: 0 0 25px 0;
-}
-section#services .row .col img.align-left {
-    margin-top: 13px;
-    margin-right: 12px;
-}
-
-/* ---------------------------------------
-    Portfolio
------------------------------------------ */
-section#portfolio ul.folio-list {
-    margin: 25px 0;
-    padding: 0;
-    width: 970px;
-    list-style: none;
-}
-section#portfolio ul.folio-list li {
-    float: left;
-    margin-right: 29px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    width: 294px;
-    height: 230px;
-    max-height: 250px;
-}
-section#portfolio ul.folio-list li .thumb {
-    margin: 0 0 5px 0;
-    padding: 0;
-    background: url(../images/thumb-frame.png) no-repeat;
-    width: 294px;
-    height: 205px;
-}
-section#portfolio ul.folio-list li .thumb img {
-    margin-top: 18px;
-    margin-left: 18px;
-}
-section#portfolio ul.folio-list li h3.entry-title {
-    font-size: 14px;
-    line-height: 25px;
-    margin-left: 16px;
-}
-
-/* ------------------------------------------------
-    About
------------------------------------------------- */
-section#about-us .primary .row .first {
-    margin-right: 35px;
-}
-section#about-us .primary ul.the-team {
-    margin: 25px 0 25px 0;
-    padding: 0;
-    list-style: none;
-}
-section#about-us .primary ul.the-team li {
-    float: left;
-    width: 290px;
-    height: 150px;
-}
-section#about-us .primary ul.the-team li a {
-    color: #3B3B3B;
-}
-section#about-us .primary ul.the-team li a:hover,
-section#about-us .primary ul.the-team li a:focus,
-section#about-us .primary ul.the-team li a:active {
-    color: #285935;
-}
-
-section#about-us .primary ul.the-team li .thumbnail {
-    position: relative;
-    float: left;
-    background: url(../images/thumb-bg.png) no-repeat;
-    width: 120px;
-    height: 150px;
-    margin-right: 12px;
-}
-section#about-us .primary ul.the-team li .thumbnail img {
-    position: absolute;
-    top: 19px;
-    left: 18px;
-}
-section#about-us .primary ul.the-team li p {
-    font-size: 14px;
-    line-height: 20px;
-    margin: 5px 0 0 0;
-}
-section#about-us .primary ul.the-team li p.mname {
-    font-family: "MerriweatherBold", Serif;
-    margin: 10px 0 0 0;
-}
-section#about-us .primary ul.the-team li.odd {
-    margin-right: 35px;
-}
-
-/*
-section#about-us aside .download-btn {
-    background: url(../images/btn-bg.png);
-    display: block;
-    width: 250px;
-    height: 53px;
-    border: 1px solid #066a19;
-    margin: 0 0 20px 0;
-    text-align: center;
-    line-height: 55px;
-
-    font-family: "MerriweatherBold", Georgia, Serif;
-    font-size: 20px;
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-    -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-}
-*/
-
-/* ---------------------------------------------------
-    Contact
------------------------------------------------------ */
-section#contact .primary form {
-    width: 500px;
-    background: url(../images/form-bg.png);
-    margin: 35px 0 25px 0;
-    padding: 50px 40px 50px 40px;
-}
-section#contact .primary form p {
-	font-family: "MerriweatherBold", Serif;
-    font-size: 14.5px;
-	color: #046416;
-}
-section#contact .primary form label {
-    display: block;
-    font-family: "MerriweatherBold", Serif;
-    font-size: 14px;
-    line-height: 25px;
-    margin: 0 0 5px 0;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
-}
-section#contact .primary form label span {
-    color: #046416;
-}
-section#contact .primary form input,
-section#contact .primary form select,
-section#contact .primary form textarea {
-    margin-bottom: 20px;
-	padding: 9px 10px;
-    color: #6A6969;
-    background: #cbcbcb;
-	border-width: 1px;
-	border-style: solid;
-  	border-color: #b8b8b8 #EBEBEB #EBEBEB #b8b8b8;
-	font: 15px Helvetica, Arial, Sans-serif;
-
-    -moz-box-shadow:inset 0 3px 1px rgba(0, 0, 0, .1);
-    -webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .1);
-    box-shadow:inset 0 1px 3px rgba(0, 0, 0, .1);
-}
-section#contact .primary form textarea {
-    height: 325px;
-    margin-bottom: 0;
-}
-section#contact .primary form input:focus,
-section#contact .primary form select:focus,
-section#contact .primary form textarea:focus {
-	background: #F0F0F0;
-}
-section#contact .primary form input.button {
-   	height: 38px;
-	margin: 5px 0;
-	background: #1F8532 url(../images/btn-bg.png);
-    border: 1px solid #066a19;
-    font-family: "MerriweatherBold", Georgia, Serif;
-    font-size: 14px;
-    color: #ffffff;
-    cursor: pointer;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
-
-    box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-    -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.4), inset 0 1px 0 #28a441;
-}
-.ie7 section#contact .primary form input.button {
-    padding: 0 2px;
-}
-#name, #email, #message, #subject, #website {
-	width: 475px;
-}
-
-section#contact aside .social li a {
-    padding-left: 35px;
-}
-section#contact aside .social li.facebook a {
-    background: url(../images/social/facebook.png) no-repeat left 11px;
-}
-section#contact aside .social li.googleplus a {
-    background: url(../images/social/googleplus.png) no-repeat left 11px;
-}
-section#contact aside .social li.twitter a {
-    background: url(../images/social/twitter.png) no-repeat left 11px;
-}
-section#contact aside .social li.dribble a {
-    background: url(../images/social/dribble.png) no-repeat left 11px;
-}
-section#contact aside .social li.linkedin a {
-    background: url(../images/social/linkedin.png) no-repeat left 11px;
-}
-section#contact aside .social li.delicious a {
-    background: url(../images/social/delicious.png) no-repeat left 11px;
-}
-section#contact aside .social li.flickr a {
-    background: url(../images/social/flickr.png) no-repeat left 11px;
-}
-
-
-/* ----------------------------------------------------
-    Latest Publications
------------------------------------------------------ */
-
-p.publication-item {
-	margin-bottom: 15px;
-}
-
 
 /* ----------------------------------------------------
     Footer
