@@ -124,7 +124,7 @@ body {
 
 p { margin-bottom: 25px; }
 p.intro {
-	font-size: 18px;
+	font-size: 17px;
 	text-align: justify;
 }
 
@@ -583,7 +583,8 @@ p.publication-item {
     Publications
 ----------------------------------------------------- */
 
-section#publications div.conf, section#publications div.thesis {
+section#publications div.conf, section#publications div.thesis, 
+section#software div.software-item {
     margin-top: 50px;
 }
 
