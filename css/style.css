@@ -590,6 +590,20 @@ section#software div.software-item {
 
 
 
+
+section#software div.software-item-description {
+    float: left;
+    width: 500px;
+}
+
+section#software div.software-img {
+    float: right;
+}
+
+section#software div.software-item-description p {
+    text-align: justify;
+}
+
 /* -----------------------------------------
    Curriculum Vitae
 ------------------------------------------- */
